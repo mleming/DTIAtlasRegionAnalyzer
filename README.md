@@ -1,5 +1,7 @@
 Author: Matthew Leming
+
 Used a lot of code written by Francois Budin
+
 MIT License
 
 This is a work in progress. It is meant to run DTI-Reg in a GUI.
