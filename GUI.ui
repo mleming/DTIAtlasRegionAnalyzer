@@ -1,0 +1,1638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DTIAtlasRegionAnalyzer</class>
+ <widget class="QDialog" name="DTIAtlasRegionAnalyzer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>894</width>
+    <height>611</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>4</horstretch>
+    <verstretch>3</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>DTI Atlas Region Analyzer</string>
+  </property>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>861</width>
+     <height>591</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+     <horstretch>30</horstretch>
+     <verstretch>30</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>200</width>
+     <height>200</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>861</width>
+     <height>831</height>
+    </size>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Input Selection</string>
+    </attribute>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>861</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>841</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Select Cases:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="Select_Cases_QLabel">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QListWidget" name="CaseList_QListWidget"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_3">
+         <item>
+          <widget class="QPushButton" name="Remove_Case_QPushButton">
+           <property name="text">
+            <string>-</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Add_Case_QPushButton">
+           <property name="text">
+            <string>+</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Save_Data_QPushButton">
+           <property name="text">
+            <string>Save Data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Load_Data_QPushButton">
+           <property name="text">
+            <string>Load Data</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="Generate_QPushButton">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>510</y>
+       <width>92</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Run</string>
+     </property>
+     <property name="flat">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="Default_QPushButton">
+     <property name="geometry">
+      <rect>
+       <x>670</x>
+       <y>340</y>
+       <width>92</width>
+       <height>27</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>The default properties read the template and the input atlas from the environment variables DTIREG_TEMPLATE and DTIREG_INPUT_ATLAS</string>
+     </property>
+     <property name="text">
+      <string>Set Defaults</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>310</y>
+       <width>571</width>
+       <height>170</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_14">
+        <property name="text">
+         <string>Template default environment variable: DTIREG_TEMPLATE</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="Template_QPushButton">
+          <property name="text">
+           <string>Browse Template</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Template_QLineEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_15">
+        <property name="text">
+         <string>Input atlas default environment variable: DTIREG_INPUT_ATLAS</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QPushButton" name="Input_Atlas_QPushButton">
+          <property name="text">
+           <string>Browse Input Atlas</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Input_Atlas_QLineEdit"/>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Output:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="Browse_Output_QPushButton">
+          <property name="text">
+           <string>Browse Output</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="Browse_Output_QLineEdit"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Options</string>
+    </attribute>
+    <widget class="QGroupBox" name="method">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>150</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Method</string>
+     </property>
+     <widget class="QRadioButton" name="method_useScalar_ANTS">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>20</y>
+        <width>158</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>useScalar-ANTS</string>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QRadioButton" name="method_useScalar_BRAINS">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>158</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>useScalar-BRAINS</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QTabWidget" name="tabWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>100</y>
+       <width>831</width>
+       <height>371</height>
+      </rect>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="ANTS_tab">
+      <attribute name="title">
+       <string>ANTS</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>601</width>
+         <height>261</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="ANTS_box">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetMinAndMaxSize</enum>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Number of Match Points (default: 50):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="numberOfMatchPoints_QLineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <item>
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>ANTS Similarity Parameter (default: 2): </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ANTSSimilarityParameter_QLineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_6">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>ANTS Iterations for Diffeomorphism (default: 100x50x25):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ANTSIterations1_QLineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>x</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ANTSIterations2_QLineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>x</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ANTSIterations3_QLineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
+          <item>
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>ANTS Gaussian Sigma (default: 3):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="ANTSGaussianSigma_QLineEdit">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="ANTSRegistrationType">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>40</y>
+         <width>181</width>
+         <height>204</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>ANTS Registration Type</string>
+       </property>
+       <widget class="QRadioButton" name="ANTSReg_None">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>None</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_Rigid">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rigid</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_Elast">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Elast</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_Exp">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>80</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Exp</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_GreedyExp">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>100</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>GreedyExp</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_GreedyDiffeo">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>GreedyDiffeo</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_SpatioTempDiffeo">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>140</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>SpatioTempDiffeo</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSReg_Affine">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>160</y>
+          <width>108</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Affine</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="ANTSSimilarityMetric">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>620</x>
+         <y>240</y>
+         <width>201</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>ANTS Similarity Metric</string>
+       </property>
+       <widget class="QRadioButton" name="ANTSSimilarityMetric_MI">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>151</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Mutual Information</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSSimilarityMetic_MSQ">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>181</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Mean Square Difference</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="ANTSSimilarityMetric_CC">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>201</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Cross Correlation (default)</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="BRAINS_tab">
+      <attribute name="title">
+       <string>BRAINS</string>
+      </attribute>
+      <widget class="QWidget" name="verticalLayoutWidget_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>511</width>
+         <height>311</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="BRAINS_box">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QLabel" name="label_16">
+            <property name="text">
+             <string>Brains Initial Deformation Field:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSinitialDeformationField_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>BRAINS Number of Histogram Levels (default: 1024):</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSnumberOfHistogramLevels_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Brains Number of Pyramid Levels:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSnumberOfPyramidLevels_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_8">
+            <property name="text">
+             <string>BRAINS Number of Pyramid Level Iterations:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSarrayOfPyramidLevelIterations1_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_9">
+            <property name="text">
+             <string>,</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSarrayOfPyramidLevelIterations2_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_10">
+            <property name="text">
+             <string>,</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSarrayOfPyramidLevelIterations3_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_11">
+            <property name="text">
+             <string>,</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSarrayOfPyramidLevelIterations4_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_12">
+            <property name="text">
+             <string>,</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="BRAINSarrayOfPyramidLevelIterations5_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <item>
+           <widget class="QLabel" name="label_26">
+            <property name="text">
+             <string>Initial Affine</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="initialAffine_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_24">
+          <item>
+           <widget class="QLabel" name="label_28">
+            <property name="text">
+             <string>Programs Paths List</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLineEdit" name="programPathsVector_QLineEdit">
+            <property name="enabled">
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QGroupBox" name="BRAINSinitializeTransformMode">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>220</y>
+         <width>247</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Brains Initialize Transform Mode</string>
+       </property>
+       <widget class="QRadioButton" name="BRAINSinitializeTransformMode_Off">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>108</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Off</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSinitializeTransformMode_useMomentsAlign">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Use Moments Align</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSinitializeTransformMode_useCenterOfHeadAlign">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>191</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Use Center of Head Align</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSinitializeTransformMode_useGeometryAlign">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>80</y>
+          <width>161</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Use Geometry Align</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QGroupBox" name="BrainsRegistrationType">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>50</y>
+         <width>191</width>
+         <height>171</height>
+        </rect>
+       </property>
+       <property name="title">
+        <string>Brains Registration Type</string>
+       </property>
+       <widget class="QRadioButton" name="BRAINSReg_None">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>None</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSReg_Rigid">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>40</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Rigid</string>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSReg_Affine">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Affine</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSReg_BSpline">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>81</y>
+          <width>161</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>BSpline</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSReg_Diffeomorphic">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>100</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Diffeomorphic</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSReg_Demons">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>158</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Demons</string>
+        </property>
+       </widget>
+       <widget class="QRadioButton" name="BRAINSReg_FastSymmetricForces">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>140</y>
+          <width>171</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>FastSymmetricForces</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSRegistrationType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BrainsRegistrationType</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSRegistrationType</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>151</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BrainsRegistrationType</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>750</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>141</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSSimilarityMetric</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSinitializeTransformMode</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>81</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>552</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSinitializeTransformMode</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>552</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSSimilarityMetric</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>90</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>281</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSinitialDeformationField_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSnumberOfHistogramLevels_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>463</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSnumberOfPyramidLevels_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>initialAffine_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations1_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations2_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations3_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations4_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations5_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>programPathsVector_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSinitialDeformationField_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>395</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSnumberOfHistogramLevels_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>463</x>
+     <y>268</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSnumberOfPyramidLevels_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>403</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations1_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations2_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>390</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations3_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>436</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations4_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>481</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>BRAINSarrayOfPyramidLevelIterations5_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>527</x>
+     <y>373</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>initialAffine_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>426</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>programPathsVector_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>356</x>
+     <y>478</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>numberOfMatchPoints_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>459</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSSimilarityParameter_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSIterations1_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>446</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSIterations2_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSIterations3_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_BRAINS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSGaussianSigma_QLineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>121</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>numberOfMatchPoints_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>459</x>
+     <y>247</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSSimilarityParameter_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>465</x>
+     <y>344</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSIterations1_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>446</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSIterations2_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>525</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSIterations3_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>603</x>
+     <y>440</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>method_useScalar_ANTS</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>ANTSGaussianSigma_QLineEdit</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>100</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>449</x>
+     <y>536</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
